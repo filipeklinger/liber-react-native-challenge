@@ -1,0 +1,3 @@
+rootProject.name = 'SHero'
+
+include ':app'
