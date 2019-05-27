@@ -17,15 +17,15 @@ Seu desafio será criar uma aplicação React Native capaz de interagir com a se
 
 ## **Descrição**
 
-O objetivo da aplicação será criar uma interface de pesquisa para os dados de um super-herói ao enviar o nome ou id do mesmo em uma caixa de pesquisa. **Seu campo deverá detectar automaticamente para qual _endpoint_ o request deve ser enviado.** Os dados que deverão ser mostrados para cada item da lista retornada pela API (note que dependendo do valor enviado pode ser mais de um) devem ser, inicialmente: seu nome e sua imagem.
+O objetivo da aplicação será criar uma interface de pesquisa para os dados de um super-herói ao enviar o nome ou id do mesmo em uma caixa de pesquisa. **Seu campo deverá detectar automaticamente para qual _endpoint_ o request deve ser enviado.** Os dados que deverão ser mostrados para cada item da lista retornada pela API (note que dependendo do valor enviado pode ser mais de um) devem ser, inicialmente: seu id, seu nome e sua imagem.
 
 Ao clicar em um dos itens da lista acima, o usuário deverá ir para uma nova tela que mostrará as informações anteriores acrescidas do _powerstats_ e aparência do super-herói em questão. Não se esqueça de colocar um botão de voltar para a tela anterior.
 
-**Observação importante:** Não esqueça de tratar o caso onde o nome do super-herói não existe na API, dando esse feedback de informação ao usuário. Além disso, é fundamental que você se preocupe com a interface da sua aplicação, de maneira geral. Por exemplo, ao fazer uma requisição na API, adicione um loader para indicar ao usuário que a mesma está sendo realizada.
+**Observação importante:** Não esqueça de tratar casos não esperado como, por exemplo, o nome do super-herói não existir na API, dando esse feedback de informação ao usuário. Além disso, é fundamental que você se preocupe com a interface da sua aplicação, de maneira geral. Por exemplo, ao fazer uma requisição na API, adicione um loader para indicar ao usuário que a mesma está sendo realizada.
 
 ## **Apresentação**
 
-É obrigatório que além do código desenvolvido, exista uma documentação detalhando como você chegou na solução apresentada. Além disso, é fundamental expor um passo a passo de como executar a aplicações desenvolvida.
+É obrigatório que além do código desenvolvido, exista uma documentação detalhando como você chegou na solução apresentada. Além disso, é fundamental expor um passo a passo de como executar a aplicação desenvolvida.
 
 ## **Avaliação**
 
