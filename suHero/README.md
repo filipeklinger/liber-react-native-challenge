@@ -1,4 +1,4 @@
-# SHero App
+# SuHero App
 
 Criado para Consumir a API https://superheroapi.com/
 

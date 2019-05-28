@@ -54,7 +54,8 @@ export default class Inicio extends Component{
     render(){
         return(
         <View style={styles.container}>
-            <Text style={styles.titulo}>Bem vindo ao SHero App</Text>
+            <Text style={styles.titulo}>Bem vindo ao</Text>
+            <Text style={[styles.titulo,{fontSize:27}]}>SuHero</Text>
             
             <View style={styles.inputContainer}>
                 <Text style={styles.texto}>Aqui vais encontrar os seus personagens favoritos</Text>
