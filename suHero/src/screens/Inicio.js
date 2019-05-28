@@ -42,9 +42,9 @@ export default class Inicio extends Component{
             if(res.data && res.data.response && res.data.response == 'error'){
                 Alert.alert('ops',this.trataErro(res.data.error))
             }else if(res.data.results)
-                this.props.navigation.navigate('Lista',{results: res.data.results})
+                this.props.navigation.navigate('Lista',{results: res.data.results})//Lista de personagens
             else
-                Alert.alert('success',JSON.stringify(res))//direto para status
+                this.props.navigation.navigate('Informacoes',{results: res.data})//direto para Informacoes
         }catch(err){
             Alert.alert('Ops',`${err}`)
         }
