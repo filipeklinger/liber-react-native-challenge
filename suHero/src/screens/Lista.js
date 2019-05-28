@@ -1,12 +1,17 @@
 import React from 'react'
-import {View,Text,FlatList,StyleSheet} from 'react-native'
-
+import {View,Text,FlatList,StyleSheet,TouchableOpacity} from 'react-native'
+import Icon from 'react-native-vector-icons/AntDesign'
 import ItemDeLista from '../components/ItemDeLista';
 
 export default props =>{
     let results = props.navigation.getParam('results')
     return(
       <View>
+        <View style={styles.voltarContainer}>
+          <TouchableOpacity onPress={()=>props.navigation.goBack()}>
+            <Icon name='arrowleft' size={22} color={'#000'}/>
+          </TouchableOpacity>
+        </View>
         <Text style={styles.titulo}>Encontramos esses herois</Text>
         <FlatList
           data={results} keyExtractor={ item=> `${item.id}`}
@@ -24,4 +29,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  voltarContainer:{
+        padding: 5,
+        paddingBottom: 16
+    }
 })

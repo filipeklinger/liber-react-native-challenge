@@ -74,11 +74,11 @@ export default class Inicio extends Component{
                             errorMessage={this.state.erro}
                             onChangeText={(text)=>{this.setState({heroi: text,erro: ''})}}/>
                         <Button
-                        buttonStyle={styles.button}
-                        title="Buscar"
-                        onPress={()=>this.buscar()}
-                        disabled={this.state.heroi === ''}
-                        loading={this.state.loading}/>
+                            buttonStyle={styles.button}
+                            title="Buscar"
+                            onPress={()=>this.buscar()}
+                            disabled={this.state.heroi === ''}
+                            loading={this.state.loading}/>
                     </View>
                 </View>
             </ImageBackground>
@@ -117,7 +117,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF'
     },
     button:{
-        paddingLeft: 16,
-        paddingRight:16
+        width: 300,
     }
 })
