@@ -37,7 +37,7 @@ const powerStatus = ps=>
 const biografia = bio=>
     <View>
         <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Nome completo:</Text> {bio['full-name']}</Text>
-        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Conhecido como:</Text> {bio['alter-egos']}</Text>
+        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Alter ego(s):</Text> {bio['alter-egos']}</Text>
     </View>
 
 export default props=>{
@@ -54,23 +54,22 @@ export default props=>{
                         <Icon name='arrowleft' size={22} color={'#000'}/>
                     </TouchableOpacity>
                 </View>
-                <View>
-                    <ImageBackground
-                        style={styles.card}
-                        imageStyle={styles.imgCard}
-                        source={cardImage}>
-                    <Text style={styles.titulo}>{heroi.name}</Text>
-                    <Image
-                        source={heroi.image.url? {uri: heroi.image.url} : null}
-                        indicator={ProgressBar} 
-                        style={styles.img}
-                    />
-                    <View style={styles.statusContainer}>
-                        {biografia(heroi.biography) || <Text>Ops algo deu errado</Text>}
-                        {powerStatus(heroi.powerstats) || <Text>Ops algo deu errado</Text>}
-                    </View>
+
+                <ImageBackground
+                    style={styles.card}
+                    imageStyle={styles.imgCard}
+                    source={cardImage}>
+                        <Text style={styles.titulo}>{heroi.name}</Text>
+                        <Image
+                            source={heroi.image.url? {uri: heroi.image.url} : null}
+                            indicator={ProgressBar} 
+                            style={styles.img}
+                        />
+                        <View style={styles.statusContainer}>
+                            {biografia(heroi.biography) || <Text>Ops algo deu errado</Text>}
+                            {powerStatus(heroi.powerstats) || <Text>Ops algo deu errado</Text>}
+                        </View>
                     </ImageBackground>
-                </View>
                 
             </View>
         </ImageBackground>
@@ -80,6 +79,7 @@ export default props=>{
 
 const styles = StyleSheet.create({
     container:{
+        minHeight:(Dimensions.get('window').height),
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
         paddingBottom: 16
     },
     img:{
-        width: 320, 
-        height: 240,
+        width: (Dimensions.get('window').width)*4/5, 
+        height: (Dimensions.get('window').height)*2/5,
         borderRadius: 6
     },
     card:{
@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     imgCard:{
+        borderRadius: 12,
         borderWidth: 3,
         borderColor: '#000'
     },
@@ -113,10 +114,11 @@ const styles = StyleSheet.create({
         color: '#000'
     },
     texto:{
-        padding: 6,
+        padding: 2,
+        fontSize: 13
     },
     statusContainer:{
-        width: 320,
+        width: (Dimensions.get('window').width)*4/5,
         backgroundColor: '#FFF',
         padding: 8,
         margin: 8,
