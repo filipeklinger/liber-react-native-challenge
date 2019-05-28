@@ -6,12 +6,16 @@ import {
 
 //telas da aplicacao
 import Inicio from './screens/Inicio'
-
+import Lista from './screens/Lista'
 const MainRoutes = {
 
     Inicio:{
         name: 'Inicio',
         screen: Inicio
+    },
+    Lista:{
+        name: 'Lista',
+        screen: Lista
     }
 }
 

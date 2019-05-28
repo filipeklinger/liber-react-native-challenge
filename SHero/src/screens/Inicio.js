@@ -28,6 +28,7 @@ export default class Inicio extends Component{
 
     trataErro = (err) =>{
         if(err.includes("not found")) return 'Não encontramos esse nome aqui'
+        if(err.includes("invalid id")) return 'Não encontramos esse ID aqui'
         return JSON.stringify(err)
     }
 
@@ -40,9 +41,10 @@ export default class Inicio extends Component{
             //verificando resposta
             if(res.data && res.data.response && res.data.response == 'error'){
                 Alert.alert('ops',this.trataErro(res.data.error))
-            }else
+            }else if(res.data.results)
+                this.props.navigation.navigate('Lista',{results: res.data.results})
+            else
                 Alert.alert('success',JSON.stringify(res))
-
         }catch(err){
             Alert.alert('Ops',`${err}`)
         }
@@ -66,6 +68,7 @@ export default class Inicio extends Component{
                 buttonStyle={styles.button}
                 title="Buscar"
                 onPress={()=>this.buscar()}
+                disabled={this.state.heroi === ''}
                 loading={this.state.loading}/>
             </View>
         </View>)
