@@ -92,14 +92,13 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
         padding: 16,
-        backgroundColor: 'rgba(0,0,0, 0.2)',
+        backgroundColor: 'rgba(0,0,0, 0.1)',
     },
     titulo:{
+        fontFamily: 'HeroesLegend',
         fontSize: 52,
         paddingTop: 30,
         color: '#FFF',
-        fontWeight: 'bold',
-        fontFamily: 'HeroesLegend'
     },
     texto:{
         paddingBottom: 16,

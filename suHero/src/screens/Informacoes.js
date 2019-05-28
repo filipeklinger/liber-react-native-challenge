@@ -100,7 +100,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     titulo:{
-        fontSize: 32,
+        fontFamily: 'HeroesLegend',
+        fontSize: 22,
         paddingTop: 16,
         paddingBottom: 16,
         textAlign: 'center',
