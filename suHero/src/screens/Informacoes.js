@@ -41,7 +41,7 @@ const biografia = bio=>
     </View>
 
 export default props=>{
-    let results = props.navigation.getParam('results')
+    let heroi = props.navigation.getParam('results')
     return(
     <ScrollView>
         <ImageBackground
@@ -58,20 +58,16 @@ export default props=>{
                     <ImageBackground
                         style={styles.card}
                         imageStyle={{borderWidth: 3,borderColor: '#000',borderRadius: 12,}}
-                        source={cardImage}
-                    >
-                    <Text style={styles.titulo}>{results.name}</Text>
+                        source={cardImage}>
+                    <Text style={styles.titulo}>{heroi.name}</Text>
                     <Image
-                        source={{uri: results.image.url}}
+                        source={{uri: heroi.image.url}}
                         indicator={ProgressBar} 
-                        style={{
-                            width: 320, 
-                            height: 240, 
-                        }}
+                        style={styles.img}
                     />
                     <View style={styles.statusContainer}>
-                        {biografia(results.biography) || <Text>Ops algo deu errado</Text>}
-                        {powerStatus(results.powerstats) || <Text>Ops algo deu errado</Text>}
+                        {biografia(heroi.biography) || <Text>Ops algo deu errado</Text>}
+                        {powerStatus(heroi.powerstats) || <Text>Ops algo deu errado</Text>}
                     </View>
                     </ImageBackground>
                 </View>
@@ -93,6 +89,11 @@ const styles = StyleSheet.create({
     voltarContainer:{
         padding: 5,
         paddingBottom: 16
+    },
+    img:{
+        width: 320, 
+        height: 240,
+        borderRadius: 6
     },
     card:{
         width: (Dimensions.get('window').width)-32,

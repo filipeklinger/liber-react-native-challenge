@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     },
     alterEgo:{
         fontSize:14,
-        color: '#999',
+        color: '#555',
     },
     imageContainer:{
         flex: 1
