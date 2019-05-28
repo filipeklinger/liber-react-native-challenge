@@ -1,9 +1,9 @@
-const token = 'sadiuhfiuewh'
+const token = '1625416087590258'
 const raiz = `https://superheroapi.com/api/${token}`;
 export default {
     //todos os endpoints da aplicação
     id: id => `${raiz}/${id}`,
-    nome: `${raiz}/search/name`,
+    nome: nome=> `${raiz}/search/${nome}`,
     powerstats: id => `${raiz}/${id}/powerstats`,
     biography: id => `${raiz}/${id}/biography`,
     appearance: id => `${raiz}/${id}/appearance`,
