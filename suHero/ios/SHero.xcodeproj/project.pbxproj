@@ -58,6 +58,8 @@
 		E91618D8CF0848B29B46E2FE /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FFEA20803274384A637CD49 /* Octicons.ttf */; };
 		5787F97B572F41E89D1274A2 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA4F9A0492AB4D71984F1DA2 /* SimpleLineIcons.ttf */; };
 		B50C9B2B7F174E45941D3ACE /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FDAD68080DB45B8A1DA1C06 /* Zocial.ttf */; };
+		B852328B530F4FC793F9D521 /* HeroesLegend.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5770AA76F674435A912EB17C /* HeroesLegend.ttf */; };
+		A445ADC15BB848F8BEA759D3 /* HeroesLegendHollow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6BE2F78DB834C5E9C44AEED /* HeroesLegendHollow.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -386,6 +388,8 @@
 		3FFEA20803274384A637CD49 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EA4F9A0492AB4D71984F1DA2 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2FDAD68080DB45B8A1DA1C06 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5770AA76F674435A912EB17C /* HeroesLegend.ttf */ = {isa = PBXFileReference; name = "HeroesLegend.ttf"; path = "../assets/fonts/HeroesLegend.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C6BE2F78DB834C5E9C44AEED /* HeroesLegendHollow.ttf */ = {isa = PBXFileReference; name = "HeroesLegendHollow.ttf"; path = "../assets/fonts/HeroesLegendHollow.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -675,6 +679,8 @@
 				3FFEA20803274384A637CD49 /* Octicons.ttf */,
 				EA4F9A0492AB4D71984F1DA2 /* SimpleLineIcons.ttf */,
 				2FDAD68080DB45B8A1DA1C06 /* Zocial.ttf */,
+				5770AA76F674435A912EB17C /* HeroesLegend.ttf */,
+				C6BE2F78DB834C5E9C44AEED /* HeroesLegendHollow.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1141,6 +1147,8 @@
 				E91618D8CF0848B29B46E2FE /* Octicons.ttf in Resources */,
 				5787F97B572F41E89D1274A2 /* SimpleLineIcons.ttf in Resources */,
 				B50C9B2B7F174E45941D3ACE /* Zocial.ttf in Resources */,
+				B852328B530F4FC793F9D521 /* HeroesLegend.ttf in Resources */,
+				A445ADC15BB848F8BEA759D3 /* HeroesLegendHollow.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

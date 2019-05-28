@@ -7,13 +7,15 @@ export default props=>{
     return(
         <TouchableOpacity onPress={()=>props.onPress('Informacoes',{results: {...hero}})}>
         <View style={styles.container}>
-            <View>
+            <View style={styles.textoContainer}>
                 <Text style={styles.nome}>{hero.name || 'Nome do heroi'}</Text>
                 <Text style={styles.alterEgo}>{hero.biography['alter-egos'] ||'Alter egos do heroi'}</Text>
             </View>
-            <Image 
-                style={{width: 60,height: 60,}}
-                source={{uri: hero.image.url}}/>
+            <View style={styles.imageContainer}>
+                <Image 
+                    style={{width: 60,height: 60,}}
+                    source={{uri: hero.image.url}}/>
+            </View>
         </View>
         </TouchableOpacity>
     )
@@ -26,7 +28,10 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: '#AAA',
         justifyContent: 'space-around',
-        alignItems: 'center'
+        alignItems: 'center',
+    },
+    textoContainer:{
+        flex: 5
     },
     nome:{
         fontSize: 18,
@@ -34,6 +39,9 @@ const styles = StyleSheet.create({
     },
     alterEgo:{
         fontSize:14,
-        color: '#AAA',
+        color: '#999',
+    },
+    imageContainer:{
+        flex: 1
     }
 })

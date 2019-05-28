@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
         fontSize: 52,
         paddingTop: 30,
         color: '#FFF',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: 'HeroesLegend'
     },
     texto:{
         paddingBottom: 16,
