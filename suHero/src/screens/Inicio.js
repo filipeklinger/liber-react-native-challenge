@@ -40,7 +40,6 @@ export default class Inicio extends Component{
         try{
             //fazendo requisicao
             const res = await axios.get(`${this.idOuNome()}`)
-            
             //verificando resposta
             if(res.data && res.data.response && res.data.response == 'error'){
                 //Alert.alert('ops',this.trataErro(res.data.error))

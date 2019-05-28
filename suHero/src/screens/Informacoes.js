@@ -22,7 +22,7 @@ const powerBar = (att,value) =>
             style={{flex:1,}}
             color={'#ff4500'}
             width={null}
-            progress={(value)/100}/>
+            progress={(isNaN(value)? 0 : value)/100}/>
     </View>
 const powerStatus = ps=>
     <View>
@@ -36,8 +36,8 @@ const powerStatus = ps=>
 
 const biografia = bio=>
     <View>
-        <Text style={styles.texto}>Nome completo: {bio['full-name']}</Text>
-        <Text style={styles.texto}>Conhecido como: {bio['alter-egos']}</Text>
+        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Nome completo:</Text> {bio['full-name']}</Text>
+        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Conhecido como:</Text> {bio['alter-egos']}</Text>
     </View>
 
 export default props=>{
@@ -57,11 +57,11 @@ export default props=>{
                 <View>
                     <ImageBackground
                         style={styles.card}
-                        imageStyle={{borderWidth: 3,borderColor: '#000',borderRadius: 12,}}
+                        imageStyle={styles.imgCard}
                         source={cardImage}>
                     <Text style={styles.titulo}>{heroi.name}</Text>
                     <Image
-                        source={{uri: heroi.image.url}}
+                        source={heroi.image.url? {uri: heroi.image.url} : null}
                         indicator={ProgressBar} 
                         style={styles.img}
                     />
@@ -99,6 +99,10 @@ const styles = StyleSheet.create({
         width: (Dimensions.get('window').width)-32,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    imgCard:{
+        borderWidth: 3,
+        borderColor: '#000'
     },
     titulo:{
         fontFamily: 'HeroesLegend',
