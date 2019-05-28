@@ -44,7 +44,7 @@ export default class Inicio extends Component{
             }else if(res.data.results)
                 this.props.navigation.navigate('Lista',{results: res.data.results})
             else
-                Alert.alert('success',JSON.stringify(res))
+                Alert.alert('success',JSON.stringify(res))//direto para status
         }catch(err){
             Alert.alert('Ops',`${err}`)
         }
