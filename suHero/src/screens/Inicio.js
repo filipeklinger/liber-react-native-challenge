@@ -3,12 +3,14 @@ import {
     View,
     Text,
     StyleSheet,
-    Alert
+    Alert,
+    ImageBackground
 } from 'react-native'
 import { Button,Input } from 'react-native-elements';
 import axios from 'react-native-axios'
 
 import Server from '../Server'
+import backImage from '../../assets/img/hero1.jpg'
 
 export default class Inicio extends Component{
     state = {
@@ -53,26 +55,30 @@ export default class Inicio extends Component{
 
     render(){
         return(
-        <View style={styles.container}>
-            <Text style={styles.titulo}>Bem vindo ao</Text>
-            <Text style={[styles.titulo,{fontSize:27}]}>SuHero</Text>
-            
-            <View style={styles.inputContainer}>
-                <Text style={styles.texto}>Aqui vais encontrar os seus personagens favoritos</Text>
-                <Text style={styles.texto}>Digite um nome de personagem ou um ID</Text>
-                <Input
-                    inputContainerStyle={styles.input}
-                    containerStyle={{paddingBottom: 16}}
-                    placeholder='Nome ou Id...'
-                    onChangeText={(text)=>{this.setState({heroi: text})}}/>
-                <Button
-                buttonStyle={styles.button}
-                title="Buscar"
-                onPress={()=>this.buscar()}
-                disabled={this.state.heroi === ''}
-                loading={this.state.loading}/>
-            </View>
-        </View>)
+            <ImageBackground
+            source={backImage}
+            style={{width: '100%', height: '100%'}}>
+                <View style={styles.container}>
+                    <Text style={styles.titulo}>SuHero</Text>
+                    
+                    <View style={styles.inputContainer}>
+                        <Text style={styles.texto}>Aqui vai encontrar os seus personagens favoritos</Text>
+                        <Text style={styles.texto}>Digite um nome de personagem ou um ID</Text>
+                        <Input
+                            inputContainerStyle={styles.input}
+                            containerStyle={{paddingBottom: 16}}
+                            placeholder='Nome ou Id...'
+                            onChangeText={(text)=>{this.setState({heroi: text})}}/>
+                        <Button
+                        buttonStyle={styles.button}
+                        title="Buscar"
+                        onPress={()=>this.buscar()}
+                        disabled={this.state.heroi === ''}
+                        loading={this.state.loading}/>
+                    </View>
+                </View>
+            </ImageBackground>
+        )
     }
 }
 
@@ -81,16 +87,20 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        padding: 16
+        padding: 16,
+        backgroundColor: 'rgba(0,0,0, 0.2)',
     },
     titulo:{
-        fontSize: 22,
-        paddingTop: 30
+        fontSize: 52,
+        paddingTop: 30,
+        color: '#FFF',
+        fontWeight: 'bold'
     },
     texto:{
         paddingBottom: 16,
         fontSize: 17,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#FFF'
     },
     inputContainer:{
         flex: 1,
@@ -100,6 +110,7 @@ const styles = StyleSheet.create({
     },
     input:{
         width: 300,
+        backgroundColor: '#FFF'
     },
     button:{
         paddingLeft: 16,
