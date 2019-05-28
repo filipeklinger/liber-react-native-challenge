@@ -15,7 +15,8 @@ import backImage from '../../assets/img/hero1.jpg'
 export default class Inicio extends Component{
     state = {
         heroi: '',
-        loading: false
+        loading: false,
+        erro: ''
     }
 
     idOuNome = ()=>{
@@ -29,8 +30,8 @@ export default class Inicio extends Component{
     }
 
     trataErro = (err) =>{
-        if(err.includes("not found")) return 'Não encontramos esse nome aqui'
-        if(err.includes("invalid id")) return 'Não encontramos esse ID aqui'
+        if(err.includes("not found")) return 'Ops! Não encontramos esse nome'
+        if(err.includes("invalid id")) return 'Ops! Não encontramos esse ID'
         return JSON.stringify(err)
     }
 
@@ -42,7 +43,8 @@ export default class Inicio extends Component{
             
             //verificando resposta
             if(res.data && res.data.response && res.data.response == 'error'){
-                Alert.alert('ops',this.trataErro(res.data.error))
+                //Alert.alert('ops',this.trataErro(res.data.error))
+                this.setState({erro: this.trataErro(res.data.error)})
             }else if(res.data.results)
                 this.props.navigation.navigate('Lista',{results: res.data.results})//Lista de personagens
             else
@@ -68,7 +70,9 @@ export default class Inicio extends Component{
                             inputContainerStyle={styles.input}
                             containerStyle={{paddingBottom: 16}}
                             placeholder='Nome ou Id...'
-                            onChangeText={(text)=>{this.setState({heroi: text})}}/>
+                            errorStyle={{ color: '#B00020' }}
+                            errorMessage={this.state.erro}
+                            onChangeText={(text)=>{this.setState({heroi: text,erro: ''})}}/>
                         <Button
                         buttonStyle={styles.button}
                         title="Buscar"

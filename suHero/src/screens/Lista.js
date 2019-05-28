@@ -1,33 +1,27 @@
-//recebe results
-/*
-"results": [
-    {
-      "id": "69",
-      "name": "Batman",
-      "powerstats": {},
-      "biography": {
-        "full-name": "Terry McGinnis",
-        "alter-egos": "No alter egos found.",
-        "aliases": [],
-        "place-of-birth": "Gotham City, 25th Century",
-        "first-appearance": "Batman Beyond #1",
-        "publisher": "DC Comics",
-        "alignment": "good"
-      },
-      "appearance": {},
-      "work": {},
-      "connections": {},
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/10441.jpg"
-      }
-    }
-*/
 import React from 'react'
-import {View,Text} from 'react-native'
+import {View,Text,FlatList,StyleSheet} from 'react-native'
+
+import ItemDeLista from '../components/ItemDeLista';
+
 export default props =>{
     let results = props.navigation.getParam('results')
-    return(<View>
-        <Text>Lista</Text>
-        <Text>{results[0].name}</Text>
-    </View>)
+    return(
+      <View>
+        <Text style={styles.titulo}>Encontramos esses herois</Text>
+        <FlatList
+          data={results} keyExtractor={ item=> `${item.id}`}
+          renderItem={ ({item}) =><ItemDeLista hero={item} onPress={props.navigation.navigate} />}
+          />
+      </View>
+    )
 }
+
+const styles = StyleSheet.create({
+  titulo:{
+    fontSize: 32,
+    paddingTop: 30,
+    color: '#000',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+})
