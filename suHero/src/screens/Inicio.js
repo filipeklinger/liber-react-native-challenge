@@ -10,7 +10,7 @@ import { Button,Input } from 'react-native-elements';
 import axios from 'react-native-axios'
 
 import Server from '../Server'
-import backImage from '../../assets/img/hero1.jpg'
+import backImage from '../../assets/img/background.jpeg'
 
 export default class Inicio extends Component{
     state = {

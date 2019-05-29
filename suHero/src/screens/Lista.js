@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
 import ItemDeLista from '../components/ItemDeLista';
-import backImage from '../../assets/img/hero1.jpg'
+import backImage from '../../assets/img/background.jpeg'
 
 export default props =>{
     let results = props.navigation.getParam('results')
