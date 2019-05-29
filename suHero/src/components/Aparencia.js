@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,Text,Stylesheet} from 'react-native'
+import {View,Text,StyleSheet} from 'react-native'
 
 export default props=>{
     let ap = props.aparencia
