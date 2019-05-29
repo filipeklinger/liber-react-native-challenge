@@ -6,7 +6,8 @@ import {
     TouchableOpacity,
     ScrollView,
     Dimensions,
-    ImageBackground
+    ImageBackground,
+    Platform
 } from 'react-native'
 import Image from 'react-native-image-progress';
 import ProgressBar from 'react-native-progress/Bar';
@@ -61,7 +62,7 @@ export default props=>{
 
 const styles = StyleSheet.create({
     container:{
-        minHeight:(Dimensions.get('window').height)-22,//altura maxima menos header
+        minHeight: Platform.OS == `android`? (Dimensions.get('window').height)-22 : (Dimensions.get('window').height),//altura maxima menos header
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
@@ -69,8 +70,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0, 0.1)',
     },
     voltarContainer:{
+        paddingTop: Platform.OS == `android`? 0 : 30,
         padding: 5,
         paddingBottom: 16
+        
     },
     img:{
         width: (Dimensions.get('window').width)*4/5, 
