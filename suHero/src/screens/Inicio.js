@@ -4,7 +4,8 @@ import {
     Text,
     StyleSheet,
     Alert,
-    ImageBackground
+    ImageBackground,
+    Platform
 } from 'react-native'
 import { Button,Input } from 'react-native-elements';
 import axios from 'react-native-axios'
@@ -71,7 +72,7 @@ export default class Inicio extends Component{
                             placeholder='Nome ou Id...'
                             errorStyle={{ color: '#B00020' }}
                             errorMessage={this.state.erro}
-                            onChangeText={(text)=>{this.setState({heroi: text,erro: ''})}}/>
+                            onChangeText={(text)=>{this.setState({heroi: text,erro: '',loading: false})}}/>
                         <Button
                             buttonStyle={styles.button}
                             title="Buscar"
@@ -98,6 +99,7 @@ const styles = StyleSheet.create({
         fontSize: 52,
         paddingTop: 30,
         color: '#FFF',
+        paddingTop: Platform.OS == `android`? 0 : 50
     },
     texto:{
         paddingBottom: 16,
@@ -107,9 +109,10 @@ const styles = StyleSheet.create({
     },
     inputContainer:{
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: Platform.OS == `android`?'center' : 'flex-start',
         alignItems: 'center',
-        padding:20
+        padding:20,
+        paddingTop: Platform.OS == `android`? 0 : 100
     },
     input:{
         width: 300,

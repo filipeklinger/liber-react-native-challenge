@@ -5,7 +5,8 @@ import {
   FlatList,
   StyleSheet,
   TouchableOpacity,
-  ImageBackground
+  ImageBackground,
+  Platform
 } from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
 import ItemDeLista from '../components/ItemDeLista';
@@ -36,8 +37,8 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     padding:16,
+    paddingTop: Platform.OS == `android`? 0 : 50,
     backgroundColor: 'rgba(255,255,255, 0.3)',
-
   },
   titulo:{
     fontSize: 22,
