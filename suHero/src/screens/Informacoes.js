@@ -14,32 +14,8 @@ import Icon from 'react-native-vector-icons/AntDesign'
 
 import cardImage from '../../assets/img/cardBackground.jpeg'
 import backImage from '../../assets/img/hero1.jpg'
-
-const powerBar = (att,value) =>
-    <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
-            <Text style={[styles.texto,{width: 100,fontWeight:'bold'}]}>{att}</Text>
-            <ProgressBar
-            style={{flex:1,}}
-            color={'#ff4500'}
-            width={null}
-            progress={(isNaN(value)? 0 : value)/100}/>
-    </View>
-
-const powerStatus = ps=>
-    <View>
-        {powerBar('Inteligência',ps.intelligence)}
-        {powerBar('Força',ps.strength)}
-        {powerBar('Velocidade',ps.speed)}
-        {powerBar('Resistência',ps.durability)}
-        {powerBar('Poder',ps.power)}
-        {powerBar('Combate',ps.combat)}
-    </View>
-
-const biografia = bio=>
-    <View>
-        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Nome completo:</Text> {bio['full-name'] || 'Não informado'}</Text>
-        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Alter ego(s):</Text> {bio['alter-egos'] || 'Não informado'}</Text>
-    </View>
+import PowerStatus from '../components/PoweStatus'
+import Aparencia from '../components/Aparencia'
 
 export default props=>{
     let heroi = props.navigation.getParam('results')
@@ -68,8 +44,12 @@ export default props=>{
                             borderRadius={6}
                         />
                         <View style={styles.statusContainer}>
-                            {biografia(heroi.biography) || <Text>Ops algo deu errado</Text>}
-                            {powerStatus(heroi.powerstats) || <Text>Ops algo deu errado</Text>}
+                            <View>
+                                <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Nome completo:</Text> {heroi.biography['full-name'] || 'Não informado'}</Text>
+                                <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Alter ego(s):</Text> {heroi.biography['alter-egos'] || 'Não informado'}</Text>
+                            </View>
+                            <Aparencia aparencia={heroi.appearance} />
+                            <PowerStatus power={heroi.powerstats}/>
                         </View>
                     </ImageBackground>
                 
