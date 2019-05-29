@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
         padding: 16,
-        backgroundColor: 'rgba(0,0,0, 0.1)',
+        backgroundColor: 'rgba(255,255,255, 0.1)',
     },
     titulo:{
         fontFamily: 'HeroesLegend',
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         paddingBottom: 16,
         fontSize: 17,
         textAlign: 'center',
-        color: '#FFF'
+        color: '#000'
     },
     inputContainer:{
         flex: 1,
