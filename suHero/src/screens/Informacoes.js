@@ -30,7 +30,7 @@ const powerStatus = ps=>
         {powerBar('Inteligência',ps.intelligence)}
         {powerBar('Força',ps.strength)}
         {powerBar('Velocidade',ps.speed)}
-        {powerBar('Durabilidade',ps.durability)}
+        {powerBar('Resistência',ps.durability)}
         {powerBar('Poder',ps.power)}
         {powerBar('Combate',ps.combat)}
     </View>
