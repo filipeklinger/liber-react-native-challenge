@@ -1,5 +1,10 @@
 import React from 'react'
-import {View,Text,StyleSheet,TouchableOpacity} from 'react-native'
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity
+} from 'react-native'
 import Image from 'react-native-image-progress';
 
 export default props=>{
@@ -9,7 +14,7 @@ export default props=>{
         <View style={styles.container}>
             <View style={styles.textoContainer}>
                 <Text style={styles.nome}>{hero.name || 'Nome do heroi'}</Text>
-                <Text style={styles.alterEgo}>{hero.biography['alter-egos'] ||'Alter egos do heroi'}</Text>
+                <Text style={styles.alterEgo}>ID: {hero.id}</Text>
             </View>
             <View style={styles.imageContainer}>
                     <Image
