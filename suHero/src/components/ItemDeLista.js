@@ -12,9 +12,11 @@ export default props=>{
                 <Text style={styles.alterEgo}>{hero.biography['alter-egos'] ||'Alter egos do heroi'}</Text>
             </View>
             <View style={styles.imageContainer}>
-                <Image 
+                    <Image
                     style={{width: 60,height: 60,}}
-                    source={{uri: hero.image.url}}/>
+                    borderRadius={6}
+                    source={{uri: hero.image.url}}
+                    />
             </View>
         </View>
         </TouchableOpacity>
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     textoContainer:{
-        flex: 5
+        flex: 8
     },
     nome:{
         fontSize: 18,
@@ -42,6 +44,6 @@ const styles = StyleSheet.create({
         color: '#555',
     },
     imageContainer:{
-        flex: 1
+        flex: 2
     }
 })
