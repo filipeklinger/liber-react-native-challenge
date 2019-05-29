@@ -24,9 +24,10 @@ const powerBar = (att,value) =>
             width={null}
             progress={(isNaN(value)? 0 : value)/100}/>
     </View>
+
 const powerStatus = ps=>
     <View>
-        {powerBar('Inteligencia',ps.intelligence)}
+        {powerBar('Inteligência',ps.intelligence)}
         {powerBar('Força',ps.strength)}
         {powerBar('Velocidade',ps.speed)}
         {powerBar('Durabilidade',ps.durability)}
@@ -36,8 +37,8 @@ const powerStatus = ps=>
 
 const biografia = bio=>
     <View>
-        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Nome completo:</Text> {bio['full-name']}</Text>
-        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Alter ego(s):</Text> {bio['alter-egos']}</Text>
+        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Nome completo:</Text> {bio['full-name'] || 'Não informado'}</Text>
+        <Text style={styles.texto}><Text style={{fontWeight:'bold'}}>Alter ego(s):</Text> {bio['alter-egos'] || 'Não informado'}</Text>
     </View>
 
 export default props=>{
@@ -64,6 +65,7 @@ export default props=>{
                             source={heroi.image.url? {uri: heroi.image.url} : null}
                             indicator={ProgressBar} 
                             style={styles.img}
+                            borderRadius={6}
                         />
                         <View style={styles.statusContainer}>
                             {biografia(heroi.biography) || <Text>Ops algo deu errado</Text>}
@@ -79,7 +81,7 @@ export default props=>{
 
 const styles = StyleSheet.create({
     container:{
-        minHeight:(Dimensions.get('window').height),
+        minHeight:(Dimensions.get('window').height)-22,//altura maxima menos header
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
@@ -96,7 +98,7 @@ const styles = StyleSheet.create({
         borderRadius: 6
     },
     card:{
-        width: (Dimensions.get('window').width)-32,
+        width: (Dimensions.get('window').width)-32,//ocupa largura maxima menos padding
         justifyContent: 'center',
         alignItems: 'center',
     },
