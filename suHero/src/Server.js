@@ -1,4 +1,4 @@
-const token = '1625416087590258'
+const token = 'SEU_TOKEN_AQUI'
 const raiz = `https://superheroapi.com/api/${token}`;
 export default {
     //todos os endpoints da aplicação
