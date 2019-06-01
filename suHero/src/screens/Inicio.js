@@ -8,7 +8,7 @@ import {
     Platform
 } from 'react-native'
 import { Button,Input } from 'react-native-elements';
-import axios from 'react-native-axios'
+import axios from 'axios'
 
 import Server from '../Server'
 import backImage from '../../assets/img/background.jpeg'
@@ -42,15 +42,18 @@ export default class Inicio extends Component{
             //fazendo requisicao
             const res = await axios.get(`${this.idOuNome()}`)
             //verificando resposta
-            if(res.data && res.data.response && res.data.response == 'error'){
+            if(res.data && isNaN(this.state.heroi))
+                this.props.navigation.navigate('Lista',{results: res.data.results})//Lista de personagens
+            else if(res.data)
+                this.props.navigation.navigate('Informacoes',{results: res.data})//direto para Informacoes
+            else if(res.data && res.data.response && res.data.response == 'error'){
                 //Alert.alert('ops',this.trataErro(res.data.error))
                 this.setState({erro: this.trataErro(res.data.error)})
-            }else if(res.data.results)
-                this.props.navigation.navigate('Lista',{results: res.data.results})//Lista de personagens
-            else
-                this.props.navigation.navigate('Informacoes',{results: res.data})//direto para Informacoes
+            }else{
+                this.setState({erro: 'Nada recebido'})
+            }
         }catch(err){
-            Alert.alert('Ops',`${err}`)
+            this.setState({erro: err.message})
         }
         this.setState({loading:false})
     }
