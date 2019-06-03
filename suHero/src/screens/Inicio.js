@@ -3,7 +3,6 @@ import {
     View,
     Text,
     StyleSheet,
-    Alert,
     ImageBackground,
     Platform
 } from 'react-native'
@@ -42,14 +41,13 @@ export default class Inicio extends Component{
             //fazendo requisicao
             const res = await axios.get(`${this.idOuNome()}`)
             //verificando resposta
-            if(res.data && isNaN(this.state.heroi))
+            if(res.data && res.data.response && res.data.response == 'error'){
+                this.setState({erro: this.trataErro(res.data.error)})
+            }else if(res.data && isNaN(this.state.heroi))
                 this.props.navigation.navigate('Lista',{results: res.data.results})//Lista de personagens
             else if(res.data)
                 this.props.navigation.navigate('Informacoes',{results: res.data})//direto para Informacoes
-            else if(res.data && res.data.response && res.data.response == 'error'){
-                //Alert.alert('ops',this.trataErro(res.data.error))
-                this.setState({erro: this.trataErro(res.data.error)})
-            }else{
+            else{
                 this.setState({erro: 'Nada recebido'})
             }
         }catch(err){
